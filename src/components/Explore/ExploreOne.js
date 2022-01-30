@@ -131,7 +131,7 @@ class ExploreOne extends Component {
     }
     render() {
         return (
-            <section className="explore-area load-more p-0">
+            <section className="explore-area load-more p-0" style={{ marginTop: 50 }}>
                 <div className="container">
                     <div className="row">
                         <div className="col-12">

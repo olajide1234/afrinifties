@@ -8,7 +8,7 @@ const Header = () => {
                 <div className="container header">
                     {/* Navbar Brand*/}
                     <a className="navbar-brand" href="/">
-                        <img className="navbar-brand-sticky" src="img/logo.png" alt="sticky brand-logo" />
+                        <img style={{height: 100, width: 100 }} className="navbar-brand-sticky" src="img/logo.png" alt="sticky brand-logo" />
                     </a>
                     <div className="ml-auto" />
                     {/* Navbar */}
@@ -54,13 +54,13 @@ const Header = () => {
                         </li> */}
                     </ul>
                     {/* Navbar Icons */}
-                    <ul className="navbar-nav icons">
+                    {/* <ul className="navbar-nav icons">
                         <li className="nav-item">
                             <a href="#" className="nav-link" data-toggle="modal" data-target="#search">
                                 <i className="fas fa-search" />
                             </a>
                         </li>
-                    </ul>
+                    </ul> */}
                     {/* Navbar Toggler */}
                     <ul className="navbar-nav toggle">
                         <li className="nav-item">

@@ -4,25 +4,13 @@ import axios from 'axios';
 const BASE_URL = "https://my-json-server.typicode.com/themeland/netstorm-json-2/footer";
 
 class Footer extends Component {
-    state = {
-        data: {},
-        socialData: [],
-        widgetData_1: [],
-        widgetData_2: []
-    }
-    componentDidMount(){
-        axios.get(`${BASE_URL}`)
-            .then(res => {
-                this.setState({
-                    data: res.data,
-                    socialData: res.data.socialData,
-                    widgetData_1: res.data.widgetData_1,
-                    widgetData_2: res.data.widgetData_2
-                })
-                // console.log(this.state.data)
-            })
-        .catch(err => console.log(err))
-    }
+    state = { socialData: [
+        { icon: 'fab fa-facebook-f', id: 1, link: "https://facebook.com/afrinifty" },
+        { icon: 'fab fa-twitter', id: 2, link: 'https://twitter.com/afrinifty'},
+        { icon: 'fab fa-instagram', id: 3, link: 'https://www.instagram.com/afrinifty'},
+        // { icon: 'fab fa-discord', id: 3, link: 'https://www.instagram.com/afrinifty/' },
+    ],
+}
     render() {
         return (
             <footer className="footer-area">
@@ -32,17 +20,17 @@ class Footer extends Component {
                         <div className="row">
                             <div className="col-12 col-sm-6 col-lg-3 res-margin">
                                 {/* Footer Items */}
-                                <div className="footer-items">
+                                <div style={{ textAlign: 'center'}}className="footer-items">
                                     {/* Logo */}
                                     <a className="navbar-brand" href="/">
-                                        <img src={this.state.data.img} alt="" />
+                                        <img style={{ height: 100, width: 100 }} src="img/logo.png" alt="afninifty logo" />
                                     </a>
-                                    <p>{this.state.data.content}</p>
+                                    <p style={{ textAlign: 'left' }}>The first and largest ORIGINAL African NFT marketplace</p>
                                     {/* Social Icons */}
                                     <div className="social-icons d-flex">
                                         {this.state.socialData.map((item, idx) => {
                                             return (
-                                                <a key={`sd_${idx}`} className={item.link} href="#">
+                                                <a key={`sd_${idx}`} className={item.link} href={item.link}>
                                                     <i className={item.icon} />
                                                     <i className={item.icon} />
                                                 </a>
@@ -55,13 +43,12 @@ class Footer extends Component {
                                 {/* Footer Items */}
                                 <div className="footer-items">
                                     {/* Footer Title */}
-                                    <h4 className="footer-title">{this.state.data.widget_1}</h4>
+                                    <h4 className="footer-title">Company</h4>
                                     <ul>
-                                        {this.state.widgetData_1.map((item, idx) => {
-                                            return (
-                                                <li key={`wdo_${idx}`}><a href="#">{item.text}</a></li>
-                                            );
-                                        })}
+                                        <li><a href="#">About Us</a></li>
+                                        <li><a href="#">FAQs</a></li>
+                                        <li><a href="#">Careers</a></li>
+
                                     </ul>
                                 </div>
                             </div>
@@ -69,28 +56,28 @@ class Footer extends Component {
                                 {/* Footer Items */}
                                 <div className="footer-items">
                                     {/* Footer Title */}
-                                    <h4 className="footer-title">{this.state.data.widget_2}</h4>
+                                    <h4 className="footer-title">Community</h4>
                                     <ul>
-                                        {this.state.widgetData_2.map((item, idx) => {
-                                            return (
-                                                <li key={`wdo_${idx}`}><a href="#">{item.text}</a></li>
-                                            );
-                                        })}
+                                        <li><a href="#">Help Center</a></li>
+                                        <li><a href="#">Partners</a></li>
+                                        <li><a href="#">Suggestions</a></li>
+                                        <li><a href="#">Blog</a></li>
+                                        <li><a href="#">Newsletter</a></li>
                                     </ul>
                                 </div>
                             </div>
-                            <div className="col-12 col-sm-6 col-lg-3">
-                                {/* Footer Items */}
+                            {/* <div className="col-12 col-sm-6 col-lg-3">
+                                
                                 <div className="footer-items">
-                                    {/* Footer Title */}
-                                    <h4 className="footer-title">{this.state.data.widget_3}</h4>
-                                    {/* Subscribe Form */}
+                                    
+                                    <h4 className="footer-title">Subscribe to us</h4>
+                                    
                                     <div className="subscribe-form d-flex align-items-center">
                                         <input type="email" className="form-control" placeholder="info@yourmail.com" />
                                         <button type="submit" className="btn"><i className="icon-paper-plane" /></button>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
@@ -102,9 +89,9 @@ class Footer extends Component {
                                 {/* Copyright Area */}
                                 <div className="copyright-area d-flex flex-wrap justify-content-center justify-content-sm-between text-center py-4">
                                     {/* Copyright Left */}
-                                    <div className="copyright-left">©2021 NetStorm, All Rights Reserved.</div>
+                                    <div className="copyright-left">©2022 AfriNifty, All Rights Reserved.</div>
                                     {/* Copyright Right */}
-                                    <div className="copyright-right">Made with <i className="fas fa-heart" /> By <a href="#">Themeland</a></div>
+                                    {/* <div className="copyright-right">Made with <i className="fas fa-heart" /> In <a href="#">Themeland</a></div> */}
                                 </div>
                             </div>
                         </div>
