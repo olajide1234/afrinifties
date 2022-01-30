@@ -18,7 +18,7 @@ class ThemeOne extends Component {
             <div className="main">
                 <Header />
                 <Hero />
-                <Auctions />
+                {/* <Auctions /> */}
                 {/* <TopSeller /> */}
                 {/* <Collections /> */}
                 <Explore />

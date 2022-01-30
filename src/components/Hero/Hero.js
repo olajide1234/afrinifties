@@ -1,22 +1,16 @@
 import React, { Component } from 'react';
 
-const initData = {
-    pre_heading: "AfriNifties",
-    heading: "Discover, collect, and sell extraordinary afro-NFTs",
-    content: "Explore on the world's best & largest afro-NFT marketplace",
-    btn_1: "Explore",
-    btn_2: "Create"
-}
-
 class Hero extends Component {
     state = {
-        data: {}
+        data: {
+            pre_heading: "AfriNifty",
+            heading: "Original NFTs by African creatives",
+            content: "AfriNifty is the first and largest marketplace for ORIGINAL African NFTs",
+            btn_1: "Explore",
+            btn_2: "Create"
+        }
     }
-    componentDidMount(){
-        this.setState({
-            data: initData
-        })
-    }
+
     render() {
         return (
             <section className="hero-section">
@@ -29,7 +23,7 @@ class Hero extends Component {
                             {/* Buttons */}
                             <div className="button-group">
                                 <a className="btn btn-bordered-white" href="/explore-1"><i className="icon-rocket mr-2" />{this.state.data.btn_1}</a>
-                                <a className="btn btn-bordered-white" href="/create"><i className="icon-note mr-2" />{this.state.data.btn_2}</a>
+                                {/* <a className="btn btn-bordered-white" href="/create"><i className="icon-note mr-2" />{this.state.data.btn_2}</a> */}
                             </div>
                         </div>
                     </div>
